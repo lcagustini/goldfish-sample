@@ -7,6 +7,9 @@
 #include <math/vector.h>
 #include <math/float.h>
 
+#include <systems.h>
+#include <components.h>
+
 #include <stddef.h>
 
 void worldSetup(struct world *world) {

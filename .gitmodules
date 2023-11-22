@@ -1,0 +1,3 @@
+[submodule "goldfish"]
+	path = goldfish
+	url = git@github.com:lcagustini/goldfish.git

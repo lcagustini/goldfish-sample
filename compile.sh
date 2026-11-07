@@ -5,7 +5,7 @@ PROJECT=goldfish-sample
 mkdir -p build
 
 if [[ $* == *--build* ]]; then
-    cd build && cmake .. && cmake --build . && cd ..
+    ( cd build && cmake .. && cmake --build . ) || { echo "Build failed"; exit 1; }
 fi
 
 # OS specific variables
@@ -19,6 +19,11 @@ elif [[ "$OSTYPE" == "cygwin" ]] || [[ "$OSTYPE" == "msys" ]]; then
     DLLS=`ldd ${TARGET} | grep ucrt64 | cut -d " " -f 3`
 else
     echo "[OS] Unsupported"
+    exit 1
+fi
+
+if [[ ! -f $TARGET ]]; then
+    echo "Target $TARGET does not exist. Run './compile.sh --build' first."
     exit 1
 fi
 

@@ -1,5 +1,9 @@
-engine.declare("firstPersonComponent", {
-    { "rotation",      "vec2"  },
-    { "rotationSpeed", "float" },
-    { "moveSpeed",     "float" },
-})
+return {
+    components = {
+        firstPersonComponent = {
+            { "rotation",      "vec2"  },
+            { "rotationSpeed", "float" },
+            { "moveSpeed",     "float" },
+        },
+    },
+}

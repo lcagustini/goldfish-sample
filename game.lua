@@ -1,1 +1,4 @@
-return { name = "goldfish-sample" }
+return {
+    name = "goldfish-sample",
+    scenes = { "assets/scripts/main.lua" },
+}
